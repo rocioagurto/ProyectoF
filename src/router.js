@@ -25,22 +25,28 @@ const router= new Router({
     {
       path: '/create',
       name: 'create',
-      component: () => import(/* webpackChunkName: "login" */ './components/Create.vue')
+      component: () => import(/* webpackChunkName: "login" */ './components/Create.vue'),
+      meta: {
+        requireLogin: true
+      }
     },
 
     {
       path: '/home',
       name: 'home',
       component: Home,
-      meta: {
-        requireLogin: true
-      }
+     
     },
   
     {
       path: '/login',
       name: 'login',
       component: () => import(/* webpackChunkName: "login" */ './views/Login.vue')
+    },
+
+    {
+      path: '*',
+      component: () => import(/* webpackChunkName: "login" */ './components/Pagina404.vue')
     }
   ]
 })
@@ -48,7 +54,7 @@ router.beforeEach((to, from, next) =>{
   let user = Firebase.auth().currentUser;
   let authRequired = to.matched.some(route => route.meta.requireLogin)
   if(!user && authRequired){
-    next('login')
+    next('home')
   }else
     next()
 })

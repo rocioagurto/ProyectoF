@@ -47,6 +47,7 @@
                 Total: $ {{ $store.getters.shoppingCart.total }}
               </p>
             </div>
+            
             <div>
               <button class="button btn-vaciar" @click="$store.dispatch('clearCart')">
                 Vaciar Carrito
@@ -72,12 +73,15 @@ export default {
   data() {
     return {}
   },
-  methods: {},
+  methods: {
+    
+  },
   computed: {
     showModal: {
       get () { return this.$store.getters.showCart },
       set (val) { this.$store.dispatch('updateShowCart', val) }
     },
+    
   },
   watch: {},
   created() {},
