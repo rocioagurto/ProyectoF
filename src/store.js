@@ -13,7 +13,7 @@ function getFromStorage(key) {
 function getCartTotal(productsList) {
   let price = 0.0
   productsList.forEach(p => {
-    price += p.price * p.qty
+    price += p.data.price * p.qty
   })
   return price
 }
@@ -39,8 +39,13 @@ export default new Vuex.Store({
     LOADING_PRODUCTS(state){
        state.loading = !state.loading
     },
+
     GET_PRODUCTS(state,products){
-      state.products = products
+      state.products =[]
+      products.forEach((p) => {
+        p['qty'] = 1
+        state.products.push(p)
+      })
       state.loading = false
     },
     

@@ -40,18 +40,10 @@
           <div class="card-content">
             <div class="content">
               <h3 class="title">{{ p.data.name }}</h3>
-              <p class="subtitle">$ {{parseInt
-                (p.data.price )}}.-</p>
-              <!-- <div class="has-spacing-bottom"> -->
-                <!-- <div class="has-spacing-bottom">
-                  <span class="tag is-medium">tortor</span>
-                  <span class="tag is-medium">suscipit</span>
-                  <span class="tag is-medium">Vivamus</span>
-                </div> -->
-              <!-- </div> -->
-              <!-- <p></p> -->
+              <p class="subtitle">$ {{parseInt (p.data.price * p.qty)}}.-</p>
+            
               <p>{{p.data.description}}</p>
-              <!-- <p></p> -->
+        
               <div class="counter">
                 <button @click="decrQty(p.id)" :disabled="p.qty === 1"><i class="mdi mdi-minus"></i></button>
                 {{ p.qty }}
