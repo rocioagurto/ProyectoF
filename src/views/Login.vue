@@ -1,13 +1,12 @@
 <template>
-  <div>
+  <div class="mt-5">
     <div class="columns">
       <div class="column is-one-third"></div>
       <div class="column is-one-third">
         <div class="login-container card">
-          <form>
+          <form class="py-4 px-6">
             <!-- Field email -->
             <div class="field">
-              <!-- Error -->
               <span v-if="formHasErrors" class="has-text-danger">
                 <i class="mdi mdi-alert"></i>
                 Usuario o Contraseña incorrectos, Intente nuevamente.
@@ -39,8 +38,11 @@
             <div class="is-clearfix"></div>
           </form>
         </div>
+       
       </div>
       <div class="column is-one-third"></div>
+    </div>
+    <div class="algo">
     </div>
   </div>
 </template>
@@ -50,9 +52,6 @@
 import Firebase from 'firebase';
 
 export default {
-  name: '',
-  components: {},
-  props: {},
   data() {
     return {
       credentials: {
@@ -79,7 +78,7 @@ export default {
           this.$router.push('/')
         })
         .catch(()=>{
-          console.log('Usuario no autenthicado')
+          alert('Usuario no autenthicado')
         })
       }
     }
@@ -91,8 +90,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.login-container {
-  padding: 2rem 1rem 0.5rem 1rem;
+<style  scoped>
+.algo {
+  height: 48vh;
+  min-height: 100%;
+  
 }
 </style>

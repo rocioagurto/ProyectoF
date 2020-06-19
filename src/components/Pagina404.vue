@@ -5,7 +5,7 @@
 
 
         <div class="container">
-            <router-link to="/">Volver al Inicio</router-link>
+            <router-link to="/">Volver al Home</router-link>
         </div>
   </div>
 </template>

@@ -1,9 +1,10 @@
 <template>
-  <nav class="navbar is-danger" role="navigation" aria-label="main navigation">
+  <nav class="navbar has-background-danger pb-2 pt-2" role="navigation" aria-label="main navigation">
+  <!-- style="background-color: lightpink;" -->
     <div class="container">
     <!-- Brand -->
     <div class="navbar-brand ">
-      <router-link to="/" class="navbar-item">
+      <router-link to="/" class="navbar-item has-text-white" style="font-size: 26px;">
         {{ brand }}
       </router-link>
       <a role="button"
@@ -24,20 +25,20 @@
         <div class="navbar-end">
           <a data-testId='cart' class="navbar-item" @click="showCart">
             <span class="icon">
-              <i class="mdi mdi-32px mdi-cart"></i>
+              <i class="mdi mdi-cart "></i>
               <span
-              class="tag is-primary"
+              class="tag is-primary "
               v-if="$store.getters.shoppingCart.list.length > 0">
                 {{ $store.getters.shoppingCart.list.length }}
               </span>
             </span>
           </a>
-          <router-link v-if="!isLoggedIn" to="/login" class="navbar-item">
+          <router-link v-if="!isLoggedIn" to="/login" class="navbar-item ">
             Login
           </router-link>
           <div v-else class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link color-letra"> <span class="icon">
-                  <i class="mdi mdi-32px mdi-account"></i>
+            <a class="navbar-link"> <span class="icon">
+                  <i class="mdi mdi-32px mdi-account has-text-white"></i>
                 </span>Hola! {{getCurrentUser ? getCurrentUser.email : ''}}
             </a>
 
@@ -111,16 +112,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// nav {
-//   height: 3.25rem;
-//   background-color: rgb(228, 11, 138);
-// }
-.navbar-item {
-  color: white;
-}
-.color-letra{
-  color: #000;
-}
+
 
 
 </style>

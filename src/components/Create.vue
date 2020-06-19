@@ -29,39 +29,38 @@
 
         <div class="field container ">
             <p class="control boton">
-                <button @click="createProduct" class="button button-crear is-primary ">Crear</button>
-                <button  class="button button-crear is-danger mt-2" v-if="edit" @click="updateProduct(id)">Actualizar</button>
+                <button @click="createProduct" class="button  is-primary  is-fullwidth">Crear</button>
+                <button  class="button is-fullwidth is-danger mt-2" v-if="edit" @click="updateProduct(id)">Actualizar</button>
             </p>
         </div>
     </div>
 
     
      <!-- Tabla para listar productos -->
-    <div>
-        <h1 class="listar mt-5">Listado de Productos</h1>
-        <table class="table table-striped mt-5">
+    <div >
+        <h1 class="listar mt-5 mb-5">Listado de Productos</h1>
+        <table class="table mb-6  is-striped has-background-danger-light">
             <thead>
-            <tr>
+            <tr class="has-background-white-ter">
                 <!-- <th> id</th> -->
                 <th>Nombre Producto</th>
                 <th>Precio</th>
                 <th>Descripción</th>
                 <th>Imagen</th>
-                <th colspan="2" class="action">Acción</th>
+                <th colspan="2" class="action"></th>
             </tr>
             </thead>
-            <tbody>
+            <tbody >
                 <tr v-for="p in computedProductList" :key="p.id">
-                <!-- <td>{{ p.id }}</td> -->
                 <td>{{ p.data.name }}</td>
                 <td>{{ p.data.price }}</td>
                 <td>{{ p.data.description}}</td>
-                <td ><img :src="p.data.picture"></td>
+                <td ><img class="image is-64x64" :src="p.data.picture"></td>
                 <td>
-                    <button class="button is-primary is-light is-normal" @click="editProduct(p.id)"> <b>Editar</b></button>
+                    <button class="button is-primary  is-small" @click="editProduct(p.id)"> <b>Editar</b></button>
                 </td>
                 <td>
-                    <button class="button is-danger is-light is-normal" @click="deleteProduct(p.id)"> <b>Borrar</b></button>
+                    <button class="button is-danger is-small" @click="deleteProduct(p.id)"> <b>Borrar</b></button>
                 </td>
                 </tr>
             </tbody>
@@ -173,11 +172,13 @@
 
 <style scoped>
     .form {
-        width: 15rem;
+        width: 20rem;
         margin: 0 auto;
         margin-top: 3rem;
     }
-   
+   .table{
+       margin: 0 auto;
+   }
     .titulo {
         text-align: center;
         margin-bottom: 10px;
@@ -193,4 +194,7 @@
         font-weight: bold;
         font-size: 20px;
     } 
+    textarea {
+      height: 15rem;
+    }
 </style>

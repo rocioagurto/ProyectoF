@@ -27,7 +27,7 @@
                     <p>
                       {{ p.qty }} x $ {{ p.data.price }} &nbsp;
                     </p>
-                    <button class="button  is-danger is-small" @click="$store.dispatch('removeFromCart', p.id)">
+                    <button class="button  is-info is-small" @click="$store.dispatch('removeFromCart', p.id)">
                       <span class="icon is-small is-left">
                         <i class="mdi mdi-18px mdi-delete"></i>
                       </span>
@@ -49,7 +49,7 @@
             </div>
             
             <div>
-              <button class="button btn-vaciar" @click="$store.dispatch('clearCart')">
+              <button  class="button is-danger :is-loading" @click="$store.dispatch('clearCart')">
                 Vaciar Carrito
               </button>
             </div>
@@ -58,8 +58,8 @@
         <!-- Content ... -->
       </section>
       <footer class="modal-card-foot">
-        <button class="button btn-volver" @click="showModal=false">Volver</button>
-        <button class="button btn-fin is-pulled-right">Finalizar Compra</button>
+        <button class="button is-primary" @click="showModal=false">Volver</button>
+        <button class="button is-primary">Finalizar Compra</button>
       </footer>
     </div>
   </div>
@@ -68,20 +68,14 @@
 <script>
 export default {
   name: 'CartDetail',
-  components: {},
-  props: {},
   data() {
     return {}
-  },
-  methods: {
-    
   },
   computed: {
     showModal: {
       get () { return this.$store.getters.showCart },
       set (val) { this.$store.dispatch('updateShowCart', val) }
     },
-    
   },
   watch: {},
   created() {},
@@ -90,13 +84,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.btn-vaciar {
-  background: rgb(252, 20, 136);
-  color: white;
-}
-.btn-volver, .btn-fin {
-  background: rgb(9, 211, 167);
-  color:white
-}
+
 
 </style>

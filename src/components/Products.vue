@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-    <section class="hero is-light is-bold">
+    <!-- Header -->
+    <section class="hero is-primary is-light is-bold mt-3" style="background: hsl(171, 100%, 41%)">
       <div class="hero-body ">
         <div class="container">
           <div style="display: inline-block;">
@@ -12,8 +13,6 @@
             </h2>
           </div>
           <div class="is-pulled-right" style="display: inline-block;">
-            <!-- <label for="searchBox">Buscar </label>
-            <input type="text" id="searchBox" v-model="search"/> -->
             <div class="field">
               <p class="control has-icons-left">
                 <input class="input" type="text" placeholder="" v-model="search">
@@ -22,34 +21,33 @@
                 </span>
               </p>
             </div>
-            <!--  -->
           </div>
         </div>
       </div>
     </section>
-    <div class="columns is-multiline">
-      <div class="column is-4" v-for="p in computedProductList" :key="p.id">
-        <!-- Item -->
-        <div class="card has-equal-height">
+    
+    <div class="columns is-multiline  mt-2">
+      <div class="column is-12-mobile is-6-tablet is-4-desktop" v-for="p in computedProductList" :key="p.id">
+        <!-- Cards -->
+        <div class="card cards-productos has-equal-height ">
           <div class="image-card">
-            <div class="image has-spacing image is-1by1	
-">
+            <div class="image has-spacing image  is-square">
               <img alt="product logo" :src="p.data.picture">
             </div>
           </div>
           <div class="card-content">
             <div class="content">
-              <h3 class="title">{{ p.data.name }}</h3>
-              <p class="subtitle">$ {{parseInt (p.data.price * p.qty)}}.-</p>
-            
-              <p>{{p.data.description}}</p>
-        
+              <h3 class="title is-size-5">{{ p.data.name }}</h3>
+              <p class="subtitle is-size-6 ">CLP {{parseInt (p.data.price * p.qty)}}.-</p>
+              <div class="descripcion">
+              <p class="is-size-6">{{p.data.description}}</p>
+              </div>
               <div class="counter">
                 <button @click="decrQty(p.id)" :disabled="p.qty === 1"><i class="mdi mdi-minus"></i></button>
                 {{ p.qty }}
                 <button @click="incrQty(p.id)"><i class="mdi mdi-plus"></i></button>
               </div>
-              <button @click="addToCart(p)" class="button is-pulled-right is-primary">Agregar Al Carro <i class="mdi mdi-cart"></i>
+              <button @click="addToCart(p)" class="button is-pulled-right is-primary"><i class="mdi mdi-cart"></i>
               </button>
               <div class="is-clearfix"></div>
             </div>
@@ -111,6 +109,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .counter {
   display: inline-block;
   button {
@@ -121,7 +120,20 @@ export default {
     cursor: pointer;
   }
 }
-.mdi-cart {
-  margin-left: 3px;
+
+.cards-productos {
+  margin-bottom: 2rem;
+  padding:0.8rem;
+  width: 28rem;
+  height: 40rem;
+  border-radius: 10px;
+  box-shadow: 0 1.5rem 1rem rgba(0, 0, 0, 0.452);
+  transition: all .5s;
+}
+.cards-productos:hover {
+    transform: translateY(1rem) scale(1.03); 
+}
+.descripcion{
+  height: 4rem;
 }
 </style>
