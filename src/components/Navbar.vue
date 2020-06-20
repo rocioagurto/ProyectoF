@@ -1,6 +1,5 @@
 <template>
-  <nav class="navbar has-background-danger pb-2 pt-2" role="navigation" aria-label="main navigation">
-  <!-- style="background-color: lightpink;" -->
+  <nav class="navbar has-background-warning-dark pb-2 pt-2" role="navigation" aria-label="main navigation">
     <div class="container">
     <!-- Brand -->
     <div class="navbar-brand ">
@@ -8,22 +7,22 @@
         {{ brand }}
       </router-link>
       <a role="button"
-      class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+      class="navbar-burger burger " aria-label="menu" aria-expanded="false"
       data-target="navbarMenu"
       :class="{'is-active' : displayMenu}"
       @click="displayMenu = !displayMenu">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+        <span class="has-text-white" aria-hidden="true"></span>
+        <span class="has-text-white " aria-hidden="true"></span>
+        <span class="has-text-white " aria-hidden="true"></span>
       </a>
     </div>
     <!--  -->
-    <div id="navbarMenu" class="navbar-menu" :class="{'is-active' : displayMenu}" >
+    <div id="navbarMenu" class="navbar-menu " :class="{'is-active' : displayMenu}" >
         <div class="navbar-start">
         </div>
 
         <div class="navbar-end">
-          <a data-testId='cart' class="navbar-item" @click="showCart">
+          <a data-testId='cart' class="navbar-item carrito has-text-white" @click="showCart">
             <span class="icon">
               <i class="mdi mdi-cart "></i>
               <span
@@ -33,17 +32,16 @@
               </span>
             </span>
           </a>
-          <router-link v-if="!isLoggedIn" to="/login" class="navbar-item ">
+          <router-link v-if="!isLoggedIn" to="/login" class="navbar-item has-text-white">
             Login
           </router-link>
-          <div v-else class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link"> <span class="icon">
-                  <i class="mdi mdi-32px mdi-account has-text-white"></i>
-                </span>Hola! {{getCurrentUser ? getCurrentUser.email : ''}}
+          <div v-else class="navbar-item has-dropdown is-hoverable" id="yapo1">
+            <a class="navbar-link has-text-white " id="yapo"> 
+               <p><i class="mdi mdi-32px mdi-account"></i> Hola! {{getCurrentUser ? getCurrentUser.email : ''}}</p> 
             </a>
 
-            <div class="navbar-dropdown">
-              <router-link class="navbar-item color-letra" to="/create" @click="displayMenu = !displayMenu"> Crear producto</router-link>
+            <div class="navbar-dropdown" style="hover:background:#000">
+              <router-link class="navbar-item " to="/create" @click="displayMenu = !displayMenu"> Crear producto</router-link>
               <a class="navbar-item color-letra">
                 Preferencias
               </a>
@@ -112,7 +110,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
-
-
+@media screen and (max-width: 1023px) {
+ .navbar-end {
+  font-size: 0.8rem;
+  color: rgb(255, 255, 255);
+  }
+  .mdi-account, .mdi-cart, .navbar-link p, .navbar-item icon{
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+  }
+  .navbar a{
+     color: rgb(255, 255, 255);
+    padding-left: 1rem;
+    font-size: 14px;
+  }
+  .navbar a:hover{
+    background: rgba(0, 0, 0, 0.37);
+    color: #fff;
+  }
+  .navbar-menu{
+    background: hsl(48, 100%, 29%);
+  }
+}
+@media screen and (min-width: 1023px){
+.navbar-item:hover{
+  background: hsl(48, 100%, 29%);
+  }
+#yapo1:focus,  #yapo:hover  {
+  background: hsl(48, 100%, 29%);
+  } 
+}
 </style>

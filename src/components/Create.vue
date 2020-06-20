@@ -1,35 +1,35 @@
 <template>
 <div class="container">
-    <div class="form">
+    <div class="form mt-6">
         <div class="container titulo">
-            <h1 class="mb-5">Ingrese Producto</h1>
+            <h1 class="mb-4 has-text-centered">Ingrese Producto</h1>
         </div>
         <div class="field container ">
             <p class="control ">
-                <input v-model="name" class="input is-primary" type="text" placeholder="Nombre del producto">
+                <input v-model="name" class="input is-warning" type="text" placeholder="Nombre del producto">
             </p>
         </div>
 
         <div class="field container">
             <p class="control ">
-                <input v-model="price" class="input is-primary" type="number" placeholder="Ingrese Precio">
+                <input v-model="price" class="input is-warning" type="number" placeholder="Ingrese Precio">
             </p>
         </div>
 
         <div class="field container" width="300">
             <p class="control ">
-                <input v-model="picture" class="input is-primary" type="text" placeholder="Ingrese URL imagen">
+                <input v-model="picture" class="input is-warning" type="text" placeholder="Ingrese URL imagen">
             </p>
         </div>
         <div class="field">
             <div class="control">
-                <textarea  v-model="description" class="textarea is-primary" placeholder="Descripcion Producto"></textarea>
+                <textarea  v-model="description" class="textarea is-warning" placeholder="Descripcion Producto"></textarea>
             </div>
         </div>
 
         <div class="field container ">
             <p class="control boton">
-                <button @click="createProduct" class="button  is-primary  is-fullwidth">Crear</button>
+                <button @click="createProduct" class="button has-background-warning-dark has-text-white is-fullwidth">Crear</button>
                 <button  class="button is-fullwidth is-danger mt-2" v-if="edit" @click="updateProduct(id)">Actualizar</button>
             </p>
         </div>
@@ -38,8 +38,8 @@
     
      <!-- Tabla para listar productos -->
     <div >
-        <h1 class="listar mt-5 mb-5">Listado de Productos</h1>
-        <table class="table mb-6  is-striped has-background-danger-light">
+        <h1 class="listar mt-5 mb-5 has-text-centered">Listado de Productos</h1>
+        <table class="table mb-6  is-striped has-background-warning-light">
             <thead>
             <tr class="has-background-white-ter">
                 <!-- <th> id</th> -->
@@ -57,10 +57,10 @@
                 <td>{{ p.data.description}}</td>
                 <td ><img class="image is-64x64" :src="p.data.picture"></td>
                 <td>
-                    <button class="button is-primary  is-small" @click="editProduct(p.id)"> <b>Editar</b></button>
+                    <button class="button has-background-warning is-small has-text-white" @click="editProduct(p.id)"> <b>Editar</b></button>
                 </td>
                 <td>
-                    <button class="button is-danger is-small" @click="deleteProduct(p.id)"> <b>Borrar</b></button>
+                    <button class="button has-background-black-bis has-text-white is-small" @click="deleteProduct(p.id)"> <b>Borrar</b></button>
                 </td>
                 </tr>
             </tbody>
@@ -163,38 +163,25 @@
     mounted(){
         this.$store.dispatch('getProducts')
     },
-    // updated(){
-    //     this.$store.dispatch('getProducts')
-    // }
-
     }
 </script>
 
-<style scoped>
-    .form {
-        width: 20rem;
-        margin: 0 auto;
-        margin-top: 3rem;
-    }
-   .table{
-       margin: 0 auto;
-   }
-    .titulo {
-        text-align: center;
-        margin-bottom: 10px;
-    }
 
-    .button-crear {
-        text-align: center;
-        width: 15rem;
-    }
-     h1 {
-        text-align: center;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 20px;
-    } 
-    textarea {
-      height: 15rem;
-    }
+
+<style lang="scss" scoped>
+.form {
+  width: 20rem;
+  margin: 0 auto;
+}
+.table{
+  margin: 0 auto;
+}
+h1 {
+  text-transform: uppercase;
+  font-size: 20px;
+} 
+textarea {
+  height: 11rem;
+  max-height: 13rem;
+}
 </style>

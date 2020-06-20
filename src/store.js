@@ -33,7 +33,8 @@ export default new Vuex.Store({
     // Cart
     shoppingCart: getFromStorage('cart') || newCart(),
     showCart: false,
-    edit: false
+    edit: false,
+    overlay: false
   },
   mutations: {
     LOADING_PRODUCTS(state){
@@ -92,7 +93,9 @@ export default new Vuex.Store({
     },
     UPDATE_EDIT(state){
       state.edit = !state.edit
-    }
+    },
+    OVERLAY_ON(state){state.overlay = true},
+    OVERLAY_OFF(state){state.overlay = false}
   },
   actions: {
     // User
@@ -138,12 +141,13 @@ export default new Vuex.Store({
       })
     },
     getProducts({commit}){
-      //aqui van 2 mutaciones
+      commit('OVERLAY_ON')
       commit('LOADING_PRODUCTS')
       //carga o no carga info
       axios.get('https://us-central1-tdd-g3.cloudfunctions.net/products/products', {headers: {"Content-type": "text/plain"}}).then((accept)=> {
         let data = accept.data;
         commit('GET_PRODUCTS', data)
+        commit('OVERLAY_OFF')
       })
     },
     updateEdit({commit}){

@@ -1,6 +1,6 @@
 <template>
 <div>
-<footer class="footer has-background-danger is-fixed-bottom">
+<footer class="footer has-background-warning-dark is-fixed-bottom">
   <div class="content has-text-centered ">
     <p>
       <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
