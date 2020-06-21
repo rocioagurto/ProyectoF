@@ -82,7 +82,7 @@ export default {
 
 <style lang="scss" scoped>
 .hero{
-  background-image: url('/assets/img/nujer.jpg');
+  background-image: url('/assets/img/mujer.jpg');
   background-size: cover;
   background-position: top;
   height: 80vh;

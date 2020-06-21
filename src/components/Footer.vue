@@ -2,13 +2,13 @@
 <div>
 <section>
   <footer class="has-background-warning-dark pb-6 pt-6">
-   <p class="has-text-white is-size-5 pb-1">SÍGUENOS TAMBIÉN AQUÍ</p>
+   <p class="has-text-white is-size-5 pb-1 is-size-6-mobile is-uppercase">síguenos también aquí</p>
     <ul class="pb-3" >
       <li> <a class="has-text-white" href="https://www.facebook.com/rocioagurtoL"><i class="fab fa-facebook-f fa-lg "></i></a> </li>
       <li> <a class="has-text-white" href="https://twitter.com/Rocioagurto"><i class="fab fa-twitter fa-lg"></i></a> </li>
       <li> <a class="has-text-white" href="https://www.instagram.com/agurtoro"><i class="fab fa-instagram fa-lg"></i></a> </li>
     </ul>
-    <p class="has-text-white ">Copyright © 2020 - Aviso legal, politica de privacidad y afiliación</i></p>
+    <p class="has-text-white is-size-7 ">Copyright © 2020 - Aviso legal, politica de privacidad y afiliación</p>
   </footer>
 </section>
 </div>

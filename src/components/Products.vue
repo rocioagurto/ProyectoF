@@ -4,8 +4,8 @@
     <section class="hero columns is-multiline">
       <div class="hero-body column is-12-mobile is-6-tablet is-4-desktop" >
         <div class="hero-title " >
-          <h1 class="title has-text-white-bis">tiendita</h1>
-          <h2 class="subtitle has-text-white-bis">Encuentra lo que buscas aquí</h2>
+          <h1 class="title has-text-white-bis is-uppercase is-size-3-mobile">tiendita</h1>
+          <h2 class="subtitle has-text-white-bis is-size-5 is-size-6-mobile">Encuentra lo que buscas aquí</h2>
         </div>
       <div class="is-pulled" style="display: inline-block;">
         <p class="control has-icons-left has-icons-right">
@@ -167,10 +167,9 @@ button {
     margin-top: 4rem;
   }
   .hero-title .title{
-    text-transform: uppercase;
-    backface-visibility: hidden;
+    // backface-visibility: hidden;
     display: inline-block;
-    font-size: 3.1rem;
+    font-size: 5rem;
     font-weight: 400;
     letter-spacing: 0.5rem;
     animation-name: moveInLeft;
@@ -179,7 +178,6 @@ button {
   }
  .hero-title .subtitle {
     display: inline-block;
-    font-size: 1rem;
     font-weight: 400;
     animation-name: moveInRight;
     animation-duration: 3s;

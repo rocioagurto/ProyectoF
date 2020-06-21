@@ -1,32 +1,28 @@
 <template>
   <nav class="navbar is-transparent has-background-warning-dark pb-2 pt-2">
     <div class="container">
-    <!-- Brand -->
-    <div class="navbar-brand ">
-      <router-link to="/" class="navbar-item has-text-white" style="font-size: 26px;">
+      <!-- Brand -->
+      <div class="navbar-brand">
+        <router-link to="/" class="navbar-item has-text-white is-size-5-mobile" style="font-size: 26px;">
         {{ brand }}
-      </router-link>
-      <a role="button"
-      class="navbar-burger burger " aria-label="menu" aria-expanded="false"
-      data-target="navbarMenu"
-      :class="{'is-active' : displayMenu}"
-      @click="displayMenu = !displayMenu">
-        <span class="has-text-white" aria-hidden="true"></span>
-        <span class="has-text-white " aria-hidden="true"></span>
-        <span class="has-text-white " aria-hidden="true"></span>
-      </a>
-    </div>
-    <!--  -->
-    <div id="navbarMenu" class="navbar-menu " :class="{'is-active' : displayMenu}" >
-        <div class="navbar-start">
-        </div>
-
+        </router-link>
+        <a role="button"
+           class="navbar-burger burger " aria-label="menu" aria-expanded="false"
+           data-target="navbarMenu"
+           :class="{'is-active' : displayMenu}"
+           @click="displayMenu = !displayMenu">
+         <span class="has-text-white" aria-hidden="true"></span>
+         <span class="has-text-white " aria-hidden="true"></span>
+         <span class="has-text-white " aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarMenu" class="navbar-menu " :class="{'is-active' : displayMenu}">
         <div class="navbar-end">
           <a data-testId='cart' class="navbar-item carrito has-text-white" @click="showCart">
             <span class="icon">
               <i class="mdi mdi-cart "></i>
               <span
-              class="tag has-background-grey-dark	has-text-white"
+              class="tag has-background-grey-dark has-text-white"
               v-if="$store.getters.shoppingCart.list.length > 0">
                 {{ $store.getters.shoppingCart.list.length }}
               </span>
@@ -35,11 +31,13 @@
           <router-link v-if="!isLoggedIn" to="/login" class="navbar-item has-text-white">
             Login
           </router-link>
+          <router-link v-if="!isLoggedIn" to="/nosotros" class="navbar-item has-text-white">
+            Nosotros
+          </router-link>
           <div v-else class="navbar-item has-dropdown is-hoverable" >
             <a class="navbar-link has-text-white "> 
-               <p class="usuario"><i class="mdi mdi-32px mdi-account"></i> Hola! {{getCurrentUser ? getCurrentUser.email : ''}}</p> 
+                <p class="usuario"><i class="mdi mdi-32px mdi-account"></i> Hola! {{getCurrentUser ? getCurrentUser.email : ''}}</p> 
             </a>
-
             <div class="navbar-dropdown" style="hover:background:#000">
               <router-link class="navbar-item " to="/create" @click="displayMenu = !displayMenu"> Crear producto</router-link>
               <router-link class="navbar-item " to="/nosotros">Nosotros</router-link>
@@ -50,13 +48,11 @@
               <a class="navbar-item color-letra" @click="logout">
                 Cerrar Sesión
               </a>
-              
             </div>
           </div>
         </div>
       </div>
-    <!--  -->
-    </div> <!-- container -->
+    </div> 
   </nav>
 </template>
 
