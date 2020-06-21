@@ -9,7 +9,9 @@
            <progress class="progress is-normal has-background-warning-dark" max="20">20%</progress>
         </div>
        </div>
+       <transition name='slide-fade' mode="out-in">
       <router-view />
+      </transition>
     <Footer />
   </div>
 </template>
@@ -33,6 +35,15 @@ export default {
 
 <style lang="scss">
  body {
-  background-color: hsla(0, 0%, 90%, 0.507);
+  background-color: hsla(0, 0%, 100%, 0.685);
 }
+.slide-fade-enter-active, .slide-fade-leave-active  {
+  transition: all .5s ease;
+}
+ 
+.slide-fade-enter, .slide-fade-leave-to{
+opacity: 0;
+}
+  
+
 </style>

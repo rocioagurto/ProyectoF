@@ -1,12 +1,13 @@
 <template>
   <div class="container">
-    <!-- Header -->
+  <!-- Header -->
     <section class="hero columns is-multiline">
       <div class="hero-body column is-12-mobile is-6-tablet is-4-desktop" >
-        <h1 class="hero-title has-text-white-bis" >
-          <span class="heading-title">tiendita</span>
-          <span class="heading-subtitle">Encuentra tus productos aquí</span>
-        </h1>
+        <div class="hero-title " >
+          <h1 class="title has-text-white-bis">tiendita</h1>
+          <h2 class="subtitle has-text-white-bis">Encuentra lo que buscas aquí</h2>
+        </div>
+      <div class="is-pulled" style="display: inline-block;">
         <p class="control has-icons-left has-icons-right">
           <input class="input" type="text" placeholder="" v-model="search">
           <span class="icon icon is-small is-left ">
@@ -14,9 +15,10 @@
           </span>
         </p>
       </div>
+    </div>
     </section>
     <div class="container columns  is-multiline">
-      <div class="column is-12-mobile is-6-tablet is-4-desktop is-4-widescreen" v-for="p in computedProductList" :key="p.id">
+      <div class="column is-12-mobile is-6-tablet is-4-desktop" v-for="p in computedProductList" :key="p.id">
         <!-- Cards -->
         <div class="card cards-productos">
           <div class="image-card">
@@ -27,14 +29,14 @@
           <div class="card-content">
             <div class="content">
               <h3 class="title is-size-5">{{ p.data.name }}</h3>
-              <p class="subtitle is-size-6 ">CLP {{parseInt (p.data.price * p.qty)}}.-</p>
+              <p class="subtitle is-size-6 mb-0">CLP {{parseInt (p.data.price )}}.-</p>
               <div class="descripcion">
-              <p class="is-size-6">{{p.data.description}}</p>
+                <p class="is-size-6">{{p.data.description}}</p>
               </div>
               <div class="counter">
-                <button @click="decrQty(p.id)" :disabled="p.qty === 1"><i class="mdi mdi-minus"></i></button>
+                <button class="has-background-grey-dark has-text-white" @click="decrQty(p.id)" :disabled="p.qty === 1"><i class="mdi mdi-minus"></i></button>
                 {{ p.qty }}
-                <button @click="incrQty(p.id)"><i class="mdi mdi-plus"></i></button>
+                <button class="has-background-grey-dark has-text-white" @click="incrQty(p.id)"><i class="mdi mdi-plus"></i></button>
               </div>
               <button @click="addToCart(p)" class="button is-pulled-right has-background-warning-dark has-text-white-bis">
                 <i class="mdi mdi-cart"></i>
@@ -52,8 +54,6 @@
 import {mapState} from 'vuex'
 
 export default {
-  components: {},
-  props: {},
   data() {
     return {
       search: '',
@@ -66,7 +66,6 @@ export default {
     },
     decrQty(id) {
       let idx = this.products.map(p => p.id).indexOf(id)
-      // console.log('decr on ', this.products[idx])
       if(this.products[idx].qty > 1) {
         this.products[idx].qty--
       }
@@ -82,39 +81,44 @@ export default {
   computed: {
     ...mapState(['products']),
     computedProductList() {
-    console.log(this.products)
+      console.log(this.products)
       return this.products.filter(p => {
         return p.data.name.toLowerCase().includes(this.search.toLowerCase())
       })
     }
   },
-  watch: {},
   created() {
     // Pull products from Product service
     this.$store.dispatch('getProducts')
   },
-  mounted() {}
 }
 </script>
 
-
-
 <style lang="scss" scoped>
+@media screen and (max-width: 768px) {
+  .cards {
+    height: 30rem;
+  }
+}
 .counter {
   display: inline-block;
-  button {
-    text-align: center;
-    border-radius: 50%;
-    height: 2rem;
-    width: 2rem;
-    cursor: pointer;
-  }
+}
+button {
+  border: none;
+  text-align: center;
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+}
+// Cards
+.card-content{
+  padding:0.5rem
 }
 .cards-productos {
   margin-bottom: 2rem;
   padding:0.8rem;
-  width: 27rem;
-  height: 42rem;
+  height: 35.5rem;
   border-radius: 10px;
   box-shadow: 0 1.5rem 1rem rgba(0, 0, 0, 0.637);
   transition: all .5s;
@@ -127,8 +131,9 @@ export default {
   margin-right: 0;
 }
 .descripcion{
-  height: 4rem;
+  height: 3rem;
 }
+// Animacion de cards
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -149,35 +154,30 @@ export default {
     opacity: 1;
     transform: translate(0); }
 }
+// Hero section
 .hero{
-  background-image: url('https://cdn.pixabay.com/photo/2017/08/01/08/29/people-2563491_960_720.jpg');
+  background-image: url('/assets/img/mujerchaleco.jpg');
   background-size: cover;
-  background-repeat: none;
   background-position: top;
   height: 80vh;
   width: 100%;
   text-align: center;
-}
-.hero-body{
-  margin: auto;
-  margin-top: 4rem;
-}
-.hero-title{
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  
-}
-.heading-title{
-  display: inline-block;
-  font-size: 3rem;
-  font-weight: 600;
-  letter-spacing: 0.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 3s;
-  animation-timing-function: ease-out;
-}
-.heading-subtitle {
+    .hero-body {
+    margin: auto;
+    margin-top: 4rem;
+  }
+  .hero-title .title{
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    display: inline-block;
+    font-size: 3.1rem;
+    font-weight: 400;
+    letter-spacing: 0.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+  }
+ .hero-title .subtitle {
     display: inline-block;
     font-size: 1rem;
     font-weight: 400;
@@ -185,5 +185,6 @@ export default {
     animation-duration: 3s;
     animation-timing-function: ease-out; 
     margin-bottom: 1rem;
+  }
 }
 </style>

@@ -2,13 +2,13 @@ describe('Products page', () => {
     it('Filters products list', () => {
       cy.visit('http://localhost:8080')
    
-      cy.get('.column.is-4').should('have.length', 14)
+      cy.get('.column.is-12-mobile.is-6-tablet.is-4-desktop').should('have.length', 7)
 
-      cy.get('input').type('Casa')
-      cy.get('.column.is-4').should('have.length', 1)
+      cy.get('input').type('Pantalon Bicolor')
+      cy.get('.column.is-12-mobile.is-6-tablet.is-4-desktop').should('have.length', 1)
 
-      cy.get('input').clear().type('Guitarra')
-      cy.get('column.is-4').should('have.length', 0)
+      cy.get('input').clear().type('Sweater')
+      cy.get('.column.is-12-mobile.is-6-tablet.is-4-desktop').should('have.length', 2)
     })
 
     it('Añade productos al Carrito', () => {
@@ -24,7 +24,7 @@ describe('Products page', () => {
         cy.get('.navbar-burger').click()
         cy.get('[data-testId="cart"]').click()
         cy.get('.modal-card-body').find('div.card-content').should('have.length',1)
-        cy.get('.modal-card-body').find('button.is-danger.is-small').click()
+        cy.get('.modal-card-body').find('button.is-info.is-small').click()
         cy.get('.modal-card-body').find('div.card-content').should('have.length', 0)
     })
 

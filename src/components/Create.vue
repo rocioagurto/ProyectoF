@@ -30,7 +30,7 @@
         <div class="field container ">
             <p class="control boton">
                 <button @click="createProduct" class="button has-background-warning-dark has-text-white is-fullwidth">Crear</button>
-                <button  class="button is-fullwidth is-danger mt-2" v-if="edit" @click="updateProduct(id)">Actualizar</button>
+                <button  class="button is-fullwidth has-background-grey-darker has-text-white	mt-2" v-if="edit" @click="updateProduct(id)">Actualizar</button>
             </p>
         </div>
     </div>
@@ -57,10 +57,10 @@
                 <td>{{ p.data.description}}</td>
                 <td ><img class="image is-64x64" :src="p.data.picture"></td>
                 <td>
-                    <button class="button has-background-warning is-small has-text-white" @click="editProduct(p.id)"> <b>Editar</b></button>
+                    <button class="button has-background-warning-dark is-small has-text-white" @click="editProduct(p.id)"> <b>Editar</b></button>
                 </td>
                 <td>
-                    <button class="button has-background-black-bis has-text-white is-small" @click="deleteProduct(p.id)"> <b>Borrar</b></button>
+                    <button class="button has-background-grey-darker has-text-white is-small" @click="deleteProduct(p.id)"> <b>Eliminar</b></button>
                 </td>
                 </tr>
             </tbody>
