@@ -111,29 +111,6 @@ button {
   width: 2rem;
   cursor: pointer;
 }
-// Cards
-.card-content{
-  padding:0.5rem
-}
-.container .columns{
-  margin-left: 0;
-  margin-right: 0;
-}
-.descripcion{
-  height: 3rem;
-}
-.cards-productos {
-  margin-bottom: 2rem;
-  padding:0.8rem;
-  height: 35.5rem;
-  border-radius: 10px;
-  box-shadow: 0 1.5rem 1rem rgba(0, 0, 0, 0.637);
-  transition: all .5s;
-}
-.cards-productos:hover {
-  transform: translateY(1rem) scale(1.03); 
-}
-
 // Animacion Titulos del header
 @keyframes moveInLeft {
   0% {
