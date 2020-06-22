@@ -34,7 +34,7 @@
        <div class="column is-12-mobile is-6-tablet is-4-desktop">
         <div class=" story card-image ">
          <figure class="story__shape image is-5by3">
-         <img src="/assets/img/feliz.jpg" class="story__img">
+         <img src="https://cdn.pixabay.com/photo/2016/02/19/10/37/girls-1209321__340.jpg" alt="" class="story__img">
           <figcaption class="story__caption izq is-italic is-size-6-mobile">"Es imposible imaginar una mujer de los tiempos modernos que no aspire a la libertad."</figcaption> 
          </figure>
         </div>
@@ -42,16 +42,16 @@
        <div class="column is-12-mobile is-6-tablet is-4-desktop">
         <div class="story card-image">
           <figure class="story__shape image is-5by3">
-            <img src="assets/img/mujeres.jpg" class="story__img">
-             <figcaption class="story__caption medio is-italic is-size-6-mobile">"Mujeres, no os preocupéis por vuestra apariencia. Lo que te hace diferente o rara es tu mayor fuerza."</figcaption>
+            <img src="https://cdn.pixabay.com/photo/2015/01/15/13/06/model-600238__340.jpg" alt="" class="story__img">
+             <figcaption class="story__caption medio is-italic is-size-6-mobile">"Tengo derecho a vestirme como yo quiera porque me visto para mí y no para incitar a la sexualidad de nadie."</figcaption>
           </figure>
         </div>
        </div>
        <div class="column is-12-mobile is-12-tablet is-4-desktop">
         <div class=" story card-image">
          <figure class="story__shape image is-5by3">
-          <img src="assets/img/audaz.jpg" class="story__img">
-           <figcaption class="story__caption der is-italic is-size-6-mobile mb-6">"Tengo derecho a vestirme como yo quiera porque me visto para mí y no para incitar a la sexualidad de nadie."</figcaption>
+          <img src="https://cdn.pixabay.com/photo/2018/01/24/19/49/people-3104635__340.jpg" alt="" class="story__img">
+           <figcaption class="story__caption der is-italic is-size-6-mobile mb-6">"Mujeres, no os preocupéis por vuestra apariencia. Lo que te hace diferente o rara es tu mayor fuerza."</figcaption>
          </figure>
         </div>
        </div>
