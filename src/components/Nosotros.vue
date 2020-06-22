@@ -5,7 +5,7 @@
     <div class=" seccion2 container columns is-multiline">
      <div class=" column is-12-mobile is-12-tablet is-4-desktop ">
        <div class=" hero-body has-text-justified mt-2">
-        <h1 class="title has-text-centered mb-5 has-text-weight-normal is-size-5-mobile">Visión</h1>
+        <h1 class="title-izq has-text-centered mb-5 has-text-weight-normal is-size-5-mobile">Visión</h1>
         <h3 class="text-izq subtitle has-text-weight-light is-size-6-mobile">
          Ser una empresa  líder y reconocida en la venta de ropa Femenina, lograr también extendernos y crear  nuestras cadenas de almacenes,   proporcionando cada día más un servicio de excelencia a nuestros clientes y que al mismo tiempo nos permitan competir en el mercado nacional con los mejores precios del mercado.
         </h3>
@@ -13,7 +13,7 @@
       </div>
       <div class="column is-12-mobile is-6-tablet is-4-desktop ">
        <div class="hero-body has-text-justified mt-2 ">
-        <h1 class="title has-text-centered mb-5 has-text-weight-normal is-size-5-mobile">Misión</h1>
+        <h1 class="title-medio has-text-centered mb-5 has-text-weight-normal is-size-5-mobile">Misión</h1>
         <h3 class="text-medio subtitle has-text-weight-light is-size-6-mobile">
          Ofrecer a nuestros clientes  productos de calidad, a precios cómodos  que cumplan con sus necesidades y exigencias, abarcando sus gustos de acuerdo a su estilo de ver y vivir la vida.
         </h3>
@@ -21,7 +21,7 @@
       </div>
       <div class="column is-12-mobile is-6-tablet is-4-desktop ">
        <div class="hero-body has-text-justified mt-2">
-        <h1 class="title has-text-centered mb-5 has-text-weight-normal is-size-5-mobile">Objetivos</h1>
+        <h1 class="title-der has-text-centered mb-5 has-text-weight-normal is-size-5-mobile">Objetivos</h1>
         <h3 class="text-der subtitle has-text-weight-light is-size-6-mobile">
         Ofrecer ropa de mejor calidad que satisfaga las  necesidades y gustos del mercado potencial, vender ropa a la moda que cumpla con los requerimientos de estilo en el segmento  del mercado.
         </h3>
@@ -76,17 +76,17 @@ h3{
  font-size:1.3rem
 }
 // Animacion seccion 2 / parrafos Vision-mision-objetivos
-.text-izq{
+.text-izq, .title-izq{
  animation-name: moveArriba;
  animation-duration: 1.2s;
  animation-timing-function: ease-out;
 }
-.text-medio{
+.text-medio, .title-medio{
  animation-name: moveAbajo;
  animation-duration: 1.2s;
  animation-timing-function: ease-out;
 }
-.text-der{
+.text-der, .title-der{
  animation-name: moveArriba;
  animation-duration: 1.2s;
  animation-timing-function: ease-out;
