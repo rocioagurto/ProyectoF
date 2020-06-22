@@ -77,7 +77,7 @@ h3{
 }
 // Animacion seccion 2 / parrafos Vision-mision-objetivos
 .text-izq{
- animation-name: moveDerecha;
+ animation-name: moveArriba;
  animation-duration: 1.2s;
  animation-timing-function: ease-out;
 }
@@ -87,20 +87,11 @@ h3{
  animation-timing-function: ease-out;
 }
 .text-der{
- animation-name: moveIzquierda;
+ animation-name: moveArriba;
  animation-duration: 1.2s;
  animation-timing-function: ease-out;
 }
-@keyframes moveDerecha {
- 0% {
- opacity: 0;
- transform: translateX(-9rem); }
-
- 100% {
- opacity: 1;
- transform: translate(0); } 
-}
-@keyframes moveAbajo {
+@keyframes moveArriba {
  0% {
  opacity: 0;
  transform: translateY(-7rem); }
@@ -109,10 +100,10 @@ h3{
  opacity: 1;
  transform: translate(0); } 
 }
-@keyframes moveIzquierda {
+@keyframes moveAbajo {
  0% {
  opacity: 0;
- transform: translateX(9rem); }
+ transform: translateY(7rem); }
 
  100% {
  opacity: 1;

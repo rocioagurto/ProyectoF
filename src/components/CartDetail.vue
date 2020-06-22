@@ -7,7 +7,7 @@
           <p class="modal-card-title">Estos son tus productos</p>
           <button class="delete" aria-label="close" @click="showModal=false"></button>
         </header>
-        <!-- Cuerdo de la ventana modal -->
+        <!-- Cuerpo de la ventana modal -->
         <section class="modal-card-body">
           <div>
             <ul>
@@ -17,25 +17,24 @@
                   <div class="media">
                     <!-- imagem del producto-->
                     <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img :src="p.data.picture" alt="Placeholder image">
+                      <figure class="image is-48x48 is-32x32-size-mobile">
+                        <img :src="p.data.picture" alt="">
                       </figure>
                     </div>
-                    <!-- Nombre y precio del producto en el carrito -->
-                    <div class=" media-left media-right"> 
-                      <p class="title is-5">{{ p.data.name }}</p>
-                      <p class="subtitle is-6">CLP {{ p.data.price  * p.qty }}.-</p>
+                    <!-- Nombre del producto en el carrito -->
+                    <div class=" media-content is-size-7-mobile is-size-5-tablet"> 
+                      <p class="title is-4 is-size-7-mobile">{{ p.data.name }}</p>
                     </div>
-                    <!-- Valor del producto por la cantidad de productos -->
-                    <p>
+                    <!-- Valor del producto por la cantidad -->
+                    <p class="media-content is-size-7-mobile is-size-5-tablet">
                       {{ p.qty }} x CLP {{ parseInt (p.data.price * p.qty )}} &nbsp;
-                    </p>
-                    <!-- Boton borrar producto del carrito -->
-                    <button class="button has-background-danger	has-text-white is-small" @click="$store.dispatch('removeFromCart', p.id)">
-                      <span class="icon is-small is-left">
+                      <!-- Boton Basurero -->
+                      <button class="button has-background-danger has-text-white is-small" @click="$store.dispatch('removeFromCart', p.id)">
+                       <span class="icon is-small is-left">
                         <i class="mdi mdi-18px mdi-delete"></i>
-                      </span>
-                    </button>
+                       </span>
+                      </button>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -47,16 +46,16 @@
         <div>
           <div>
             <div class="is-pulled-right">
-              <p class="title is-4">Total: CLP {{ $store.getters.shoppingCart.total }}</p>
+              <p class="title is-4 is-size-7-mobile">Total: CLP {{ $store.getters.shoppingCart.total }}</p>
             </div>
             <div>
-              <button  class="button has-background-grey-darker has-text-white :is-loading" @click="$store.dispatch('clearCart')">
+              <button  class="  button has-background-grey-darker has-text-white" @click="$store.dispatch('clearCart')">
                 Vaciar Carrito
               </button>
             </div>
           </div>
         </div>
-        <!-- Content ... -->
+        <!-- Botones volver y finalizar compra -->
       </section>
       <footer class="modal-card-foot">
         <button class="button has-background-warning-dark has-text-white" @click="showModal=false">Volver</button>
