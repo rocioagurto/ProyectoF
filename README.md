@@ -68,4 +68,4 @@ A este proyecto falta mejorarles muchas cosas, por ejemplo:
 * Agregar un formulario para que el cliente puede registrar y asi tener su propio perfil de compra.
 * Agregar las formas de pago que tiene disponible.
 
-# Espero el este proyecto haya sido de su agrado.
+## Espero que este proyecto haya sido de su agrado.
